@@ -7,7 +7,7 @@ td,
 th,
 p {
 	font-family: Arial, Helvetica, sans-serif;
-	font-size: 11pt;
+	font-size: 12pt;
 	color: #333;
   line-height: 1.5;
  
@@ -292,7 +292,14 @@ nav h1 a {
   width: 45%;
 }
 
-
+.info {
+	width:50%;
+	height: auto;
+	display: flex;
+  flex-wrap: wrap;
+	flex-flow: column;
+  justify-content: space-evenly;
+}
 #restaurant-name {
   color: #f18200;
   font-family: Arial,sans-serif;
@@ -412,10 +419,26 @@ nav h1 a {
 
 
 #restaurant-hours td {
-  color: #666;
+
+  background-color: #fff;
+
+  /*font-weight: 300; */
+  padding: 5px 5px;
 }
 
+#restaurant-hours td:nth-of-type(1) {
+  font-weight: bold;
+}
 
+#restaurant-hours td:nth-of-type(2) {
+  font-style: italic;
+  }
+
+#restaurant-hours {
+  margin-left: auto;
+  margin-right: auto;
+  border: 2px solid #ccc;
+}
 /* ======================== Media Query ================================*/
 
 @media only screen and (max-width: 600px) {
