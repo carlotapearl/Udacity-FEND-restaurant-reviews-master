@@ -255,9 +255,9 @@ nav h1 a {
 
 
 #restaurants-list li a {
-  background-color: #444;
+  background-color: #0a0909;
   border-bottom: 3px solid #eee;
-  color: orange;
+  color: #fff;
   display: inline-block;
   font-size: 10pt;
   margin: 15px 0 0;
@@ -412,7 +412,8 @@ nav h1 a {
   align-self: center;
   width: 50%;
   text-align: right;
-  color: #ccc
+  color: #ccc;
+  background-color: #0a0909;
 }
 
 #reviews-list li>p:nth-child(3) {
