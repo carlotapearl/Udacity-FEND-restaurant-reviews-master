@@ -17,4 +17,37 @@ self.addEventListener('install', event => {
                 
         });
     }));
-});            
+});  
+
+self.addEventListener('activate', event => {
+    event.waitUntil(
+      caches.keys().then(function(cacheNames) {
+        return Promise.all(
+          cacheNames.filter(function(cacheName) {
+            return cacheName.startsWith('Udacity-FEND-') &&
+                   cacheName != staticCacheName;
+          }).map(function(cacheName) {
+            return caches.delete(cacheName);
+          })
+        );
+      })
+    );
+  });
+
+self.addEventListener('fetch', event => {
+    event.respondWith(    
+      caches.match(event.request).then( response => {
+        if (response !== undefined) {
+            return response;
+        } else {        
+            return fetch(event.request).then( response => { 
+                let responseClone = response.clone();  
+                caches.open(staticCacheName).then( cache => {
+                    cache.put(event.request, responseClone);
+                });
+                return response;
+            });
+          }
+      })  
+    ); 
+});
