@@ -142,12 +142,14 @@ nav h1 a {
 #breadcrumb li a {
     color: #0275d8;
     text-decoration: none;
+    border-bottom: 1px dotted #0275d8
 }
 
 /* Add a color on mouse-over */
 #breadcrumb li a:hover {
-    color: #01447e;
+    color: #001144;
     text-decoration: underline;
+    border: none;
 }
 
 /* ====================== Map ====================== */
@@ -265,6 +267,7 @@ nav h1 a {
   text-decoration: none;
   text-transform: uppercase;
 }
+
 
 /* ====================== Restaurant Details ====================== */
 .inside header {
